@@ -15,7 +15,7 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-$cakeDescription = __d('cake_dev', 'Microsave');
+$cakeDescription = __d('cake_dev', 'Cake Boot Swatched ');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -29,7 +29,7 @@ $cakeDescription = __d('cake_dev', 'Microsave');
     <?php
     echo $this->Html->meta('icon');
 
-    echo $this->Html->css('bootstrap');
+    echo $this->Html->css(array("Themed/$bootSwatched/bootstrap"));
 
     echo $this->fetch('meta');
     echo $this->fetch('css');
@@ -44,6 +44,9 @@ $cakeDescription = __d('cake_dev', 'Microsave');
     </style>
 </head>
 <body>
+<!--script type ="text/javascript">
+    jQuery
+</script-->
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -52,8 +55,8 @@ $cakeDescription = __d('cake_dev', 'Microsave');
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Admin Theme</a>
-            <?php echo $this->element('siteAdmin/topMenu'); ?>
+            <a class="brand" href="#">Cake Bootswatched</a>
+            <?php echo $this->element('siteAdmin/header'); ?>
             <!--/.nav-collapse -->
         </div>
     </div>
@@ -64,11 +67,7 @@ $cakeDescription = __d('cake_dev', 'Microsave');
     echo $this->fetch('content');
     ?>
     <hr>
-    <footer>
-        <p>
-            &copy; MicroSave <?php echo date('Y'); ?>
-        </p>
-    </footer>
+    <?php echo $this->element('siteAdmin/footer'); ?>
 </div>
 <?php echo $this->element('sql_dump'); ?>
 </body>

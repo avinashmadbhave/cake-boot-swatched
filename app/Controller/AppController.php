@@ -33,7 +33,30 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    public function beforeFilter(){
+    public $bootSwatched = '';
 
+    public function beforeFilter(){
+        parent::beforeFilter();
+        /**
+         * Options :
+         *  - Default
+         *  - Amelia
+         *  - Cerulean
+         *  - Cyborg
+         *  - Readable
+         *  - Slate
+         *  - Spruce
+         *  - Superhero
+         */
+        $this->bootSwatched = 'Cerulean'; //Default
     }
+
+    public function beforeRender() {
+        parent::beforeRender();
+        if(empty($this->bootSwatched)) {
+            $this->bootSwatched = 'Default';
+        }
+        $this->set('bootSwatched' , $this->bootSwatched);
+    }
+
 }
